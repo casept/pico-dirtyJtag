@@ -68,6 +68,7 @@ add_executable(dirtyJtag
 		usb_descriptors.c
 		pio_jtag.c
         cdc_uart.c
+        cdc_gpio.c
 		get_serial.c
 		cmd.c
         led.c
@@ -92,6 +93,7 @@ target_link_libraries(dirtyJtag PRIVATE
     hardware_pio
 	hardware_dma
 	pico_unique_id
+	pico_bootrom
 	tinyusb_device
 	tinyusb_board
 	pico_multicore

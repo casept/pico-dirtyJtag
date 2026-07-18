@@ -67,7 +67,12 @@
 //------------- CLASS -------------//
 #define CFG_TUD_HID             0
 
+#if CDC_GPIO_ENABLE
+#define CFG_TUD_CDC (CDC_UART_INTF_COUNT + 1)
+#define CDC_GPIO_ITF CDC_UART_INTF_COUNT
+#else
 #define CFG_TUD_CDC CDC_UART_INTF_COUNT
+#endif
 #define CFG_TUD_MSC             0
 #define CFG_TUD_MIDI            0
 #define CFG_TUD_VENDOR          1

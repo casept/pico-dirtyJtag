@@ -35,6 +35,7 @@
 #include "pico/multicore.h"
 #include "pio_jtag.h"
 #include "cdc_uart.h"
+#include "cdc_gpio.h"
 #include "led.h"
 #include "bsp/board.h"
 #include "tusb.h"
@@ -123,6 +124,9 @@ void jtag_main_task()
         } else {
 #if ( CDC_UART_INTF_COUNT > 0 )           
             cdc_uart_task();
+#endif
+#if CDC_GPIO_ENABLE
+            cdc_gpio_task();
 #endif
         }
     }

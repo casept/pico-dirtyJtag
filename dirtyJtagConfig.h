@@ -66,6 +66,11 @@
 
 // Set CDC_UART_INTF_COUNT to 0 to disable USB-CDC-UART bridge
 
+// Set CDC_GPIO_ENABLE to 0 to disable the GPIO-control CDC shell.
+#ifndef CDC_GPIO_ENABLE
+#define CDC_GPIO_ENABLE 1
+#endif
+
 // Pinout for these 2 is identical
 #if ( ( BOARD_TYPE == BOARD_PICO ) || ( BOARD_TYPE == BOARD_PICO_2 ) )
 

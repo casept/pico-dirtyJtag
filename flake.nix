@@ -45,6 +45,10 @@
               in
               {
                 rpi.pico = default;
+                rpi.pico2 = default.override {
+                  board = "pico2";
+                  boardType = "BOARD_PICO_2";
+                };
                 adafruit.itsy = default.override {
                   # not tested but should work
                   board = "adafruit_itsybitsy_rp2040";
@@ -89,6 +93,7 @@
             {
               default = rpi.pico;
               rpi-pico = rpi.pico;
+              rpi-pico2 = rpi.pico2;
               adafruit-itsy = adafruit.itsy;
               adafruit-kb2040 = adafruit.kb2040;
               spoke-rp2040 = spoke.rp2040;

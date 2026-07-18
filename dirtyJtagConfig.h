@@ -41,6 +41,7 @@
 #define BOARD_QMTECH_RP2040_DAUGHTERBOARD 3
 #define BOARD_WERKZEUG       4
 #define BOARD_RP2040_ZERO    5
+#define BOARD_PICO_2         6
 
 // Select the board type from the above
 //#define BOARD_TYPE BOARD_PICO
@@ -49,6 +50,7 @@
 //#define BOARD_TYPE BOARD_WERKZEUG
 //#define BOARD_TYPE BOARD_QMTECH_RP2040_DAUGHTERBOARD
 //#define BOARD_TYPE BOARD_RP2040_ZERO
+//#define BOARD_TYPE BOARD_PICO_2
 
 #ifndef BOARD_TYPE
 #define BOARD_TYPE BOARD_PICO
@@ -64,7 +66,8 @@
 
 // Set CDC_UART_INTF_COUNT to 0 to disable USB-CDC-UART bridge
 
-#if ( BOARD_TYPE == BOARD_PICO )
+// Pinout for these 2 is identical
+#if ( ( BOARD_TYPE == BOARD_PICO ) || ( BOARD_TYPE == BOARD_PICO_2 ) )
 
 #define PIN_TDI 16 
 #define PIN_TDO 17
